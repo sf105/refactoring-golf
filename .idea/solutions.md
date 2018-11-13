@@ -3,5 +3,16 @@ Refactoring 1
 
 Refactoring 2
 - extract local variable tax 
-- extract method getTax()
-- inline local variable tax in getTax()
+- extract method calculatedTax()
+- inline local variable tax in getNet()
+
+Refactoring 3
+- extract MethodObject to create TaxCalculator
+- inline generate invoke() method
+- in calculatedTax, IntroduceParameter grossSalary
+- convert TaxCalculator() to field, initialised in Constructor
+- make TaxCalculator static
+- introduce taxCalculator parameter to constructor
+- rename calculatedTax to taxFor
+- change scope of taxFor to public
+- move TaxCalculator to top level
