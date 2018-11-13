@@ -7,7 +7,7 @@ package payroll.refactoring07;
  * Both of these are subject to change
  */
 public class TaxCalculator {
-    public double getTax(final double grossSalary) {
+    public double taxFor(final double grossSalary) {
 		final TaxBand upperTaxBand = new TaxBand(40000.0, 0.4);
 		final double upperTaxBracketTax = upperTaxBand.getTaxInBand(grossSalary);
         final double remainingGrossForMiddleAndLowerBrackets = upperTaxBand.getGrossToTaxInBandsBelowCurrent(grossSalary);
