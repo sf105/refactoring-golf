@@ -21,7 +21,7 @@ public class BandedTaxCalculator implements TaxCalculator {
 	}
 
 	private double grossToTaxAtLowerBand(double grossSalary) {
-		return Math.min(minimumGross, grossSalary);
+		return Math.min(grossSalary, minimumGross);
 	}
 
 	private double taxForBand(double grossSalary) {

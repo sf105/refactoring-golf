@@ -30,7 +30,7 @@ public class TaxCalculator {
 		}
 
 		private double grossToTaxInBandsBelowCurrent(final double grossSalary) {
-			return Math.min(bracketMinimumGross, grossSalary);
+			return Math.min(grossSalary, bracketMinimumGross);
 		}
 
 		private double taxInBand(final double grossSalaryExcludingPartAlreadyTaxedAtHigherRate) {
