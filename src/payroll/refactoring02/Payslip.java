@@ -1,8 +1,8 @@
 package payroll.refactoring02;
 
 /**
- * getNet() should represent a single level of abstraction
- * but it contains detailed tax calculation
+ * getNet() mixes up both the calculation of the tax and subtraction from the gross pay.
+ * This should be split out
  */
 public class Payslip {
     private final double grossSalary;

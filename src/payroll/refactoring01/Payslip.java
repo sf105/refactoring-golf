@@ -1,7 +1,7 @@
 package payroll.refactoring01;
 
 /**
- * 1) Improve the naming
+ * This is a simple tax calculation, but the variable names need to be readable.
  */
 public class Payslip {
     private final double sal;
