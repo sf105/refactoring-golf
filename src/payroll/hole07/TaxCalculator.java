@@ -17,20 +17,20 @@ public class TaxCalculator {
     }
 
 	private static class TaxBand {
-		private final double bracketMinimumGross;
+		private final double minimumGross;
 		private final double taxRate;
 
-		private TaxBand(double bracketMinimumGross, double taxRate) {
-			this.bracketMinimumGross = bracketMinimumGross;
+		private TaxBand(double minimumGross, double taxRate) {
+			this.minimumGross = minimumGross;
 			this.taxRate = taxRate;
 		}
 
 		private double grossToTaxInBand(double grossSalaryExcludingPartAlreadyTaxedAtHigherRate) {
-			return Math.max(0, grossSalaryExcludingPartAlreadyTaxedAtHigherRate - bracketMinimumGross);
+			return Math.max(0, grossSalaryExcludingPartAlreadyTaxedAtHigherRate - minimumGross);
 		}
 
 		private double grossToTaxInBandsBelowCurrent(final double grossSalary) {
-			return Math.min(grossSalary, bracketMinimumGross);
+			return Math.min(grossSalary, minimumGross);
 		}
 
 		private double taxInBand(final double grossSalaryExcludingPartAlreadyTaxedAtHigherRate) {
