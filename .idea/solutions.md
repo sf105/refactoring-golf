@@ -24,6 +24,9 @@ Refactoring 4
 - move assertNetForGross to bottom
 
 Refactoring 5
+- Extract variable for tax bracket rates (x3)
+- extract variable for low tax bracket start
+
 
 Refactoring 6
 - Extract ParameterObject with bracketMinimumGross and taxRate

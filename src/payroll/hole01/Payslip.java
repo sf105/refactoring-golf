@@ -8,10 +8,9 @@ public class Payslip {
     }
 
     public double getNet() {
-        final double tfAmnt = Math.min(sal, 5000);
-        final double ltbAmnt = Math.min(sal - tfAmnt, 15000);
-        final double mtbAmnt = Math.min(sal - ltbAmnt - tfAmnt, 20000);
-        final double utbAmnt = Math.min(sal - mtbAmnt - ltbAmnt - tfAmnt, 20000);
-        return sal - (ltbAmnt * 0.1 + mtbAmnt * 0.2 + utbAmnt * 0.4);
+        final double ltbg = Math.max(Math.min(sal, 20000.0) - 5000, 0.0);
+        final double mtbg = Math.max(Math.min(sal, 40000) - 20000, 0.0);
+        final double utbg = Math.max(sal - 40000, 0.0);
+        return sal - (ltbg * 0.1 + mtbg * 0.2 + utbg * 0.4);
     }
 }

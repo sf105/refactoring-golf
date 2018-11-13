@@ -5,6 +5,11 @@ tp get you to explore your IDE to see what's really possible using
 shortcuts and automation.
 
 This repository contains multiple versions of a simple class to calculate tax on a payslip.
+* The first £5,000 is tax free
+* Up to £20,000 is taxed at 10%
+* Up to £40,000 is taxed at 20%
+* Above £40,000 is taxed at 40%
+
 Each version is a refactoring of the previous version. Sticking with the golf metaphor, 
 each version is called a "hole". 
 
