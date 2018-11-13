@@ -38,3 +38,5 @@ Refactoring 5
 - move getTaxInBand to TaxBand
 - inline getTaxRate
 - inline tax band constants
+
+Refactoring 
