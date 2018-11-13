@@ -17,22 +17,22 @@ public class BandedTaxCalculator implements TaxCalculator {
 	
 	@Override
 	public double taxFor(double grossSalary) {
-		return getTaxForBand(grossSalary) + getTaxForLowerBands(grossSalary);
+		return taxForBand(grossSalary) + taxForLowerBands(grossSalary);
 	}
 
-	private double getTaxForLowerBands(double grossSalary) {
-		return lowerBandCalculator == null ? 0 : lowerBandCalculator.taxFor(getGrossToTaxAtLowerBand(grossSalary));
+	private double taxForLowerBands(double grossSalary) {
+		return lowerBandCalculator == null ? 0 : lowerBandCalculator.taxFor(grossToTaxAtLowerBand(grossSalary));
 	}
 
-	private double getGrossToTaxAtLowerBand(double grossSalary) {
+	private double grossToTaxAtLowerBand(double grossSalary) {
 		return Math.min(minimumGross, grossSalary);
 	}
 
-	private double getTaxForBand(double grossSalary) {
-		return getGrossInBand(grossSalary) * taxRate;
+	private double taxForBand(double grossSalary) {
+		return grossInBand(grossSalary) * taxRate;
 	}
 
-	private double getGrossInBand(double grossSalary) {
+	private double grossInBand(double grossSalary) {
 		return Math.max(0, grossSalary - minimumGross);
 	}
 }
