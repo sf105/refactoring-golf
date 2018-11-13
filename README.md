@@ -1,15 +1,16 @@
 # Refactoring Golf
 
-Refactoring Golf is a game designed to stretch your refactoring muscles and 
+_Refactoring Golf_ is a game designed to stretch your refactoring muscles and 
 tp get you to explore your IDE to see what's really possible using 
 shortcuts and automation.
 
 This repository contains multiple versions of a simple class to calculate tax on a payslip.
-Each version is a refactoring of the previous version.
+Each version is a refactoring of the previous version. Sticking with the golf metaphor, 
+each version is called a "hole". 
 
-Your goal is to refactor from each version to the next safely and efficiently,
-using the features of the IDE with as few "strokes" as possible, where a stroke is a 
-change to the code. Every stroke costs you points.
+Your goal is to refactor from each _hole_ to the next safely and efficiently,
+using the features of the IDE with as few "strokes" as possible, where a _stroke_ is 
+an action that changes the code. Every stroke costs you points.
 
 Your pairing partner should carefully score you as follows:
 
