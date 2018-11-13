@@ -32,21 +32,24 @@ if you want to make another attempt or if you get confused.
 the project view and selecting `Run 'All Tests'` from the pop-up menu. 
 
 ## Course records:
-These are the best known scores, achieved using IntelliJ:
+These are some example scores, achieved using IntelliJ:
 
-| Hole | Best score | Notes |
-|------|------------|-------|
-| 1    | 3          |       |
-| 2    | 7          |       |
-| 3    | 5          |       |
-| 4    | 6          |       |
-| 5    | 10         |       |
-| 6    | 7          |       |
- 
+| Hole | Best score | Notes 
+|------|------------|-------
+| 1    | 6          |       
+| 2    | 3          |       
+| 3    | 9          |       
+| 4    | 17         | lots of manual edits 
+| 5    | xx         |       
+| 6    | 14         |       
+| 7    | xx         |       
+| 8    | xx         |       
 
 ## Acknowledgements:
-This exercise was mainly taken from an example by Lance Walton
+This exercise was mainly taken from an example by Lance Walton.
+
 Other ideas were taken from David Denton and Ivan Sanchez, inspired by @ivanmoore and @rchatley
+
 These instructions were mostly stolen from @jasongorman's 
 <a href="https://github.com/jasongorman/RefactoringGolfJava">Refactoring Golf</a>.
 
