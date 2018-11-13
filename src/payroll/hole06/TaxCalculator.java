@@ -20,14 +20,14 @@ public class TaxCalculator {
     }
 
 	private double taxInBand(final double grossSalaryExcludingPartAlreadyTaxedAtHigherRate, final double bracketMinimumGross, final double taxRate) {
-		return getGrossToTaxInBand(grossSalaryExcludingPartAlreadyTaxedAtHigherRate, bracketMinimumGross) * taxRate;
+		return grossToTaxInBand(grossSalaryExcludingPartAlreadyTaxedAtHigherRate, bracketMinimumGross) * taxRate;
 	}
 
 	private double grossToTaxInBandsBelowCurrent(final double grossSalary, final double bracketMinimumGross) {
 		return Math.min(bracketMinimumGross, grossSalary);
 	}
 
-	private double getGrossToTaxInBand(double grossSalaryExcludingPartAlreadyTaxedAtHigherRate, final double bracketMinimumGross) {
+	private double grossToTaxInBand(double grossSalaryExcludingPartAlreadyTaxedAtHigherRate, final double bracketMinimumGross) {
 		return Math.max(0, grossSalaryExcludingPartAlreadyTaxedAtHigherRate - bracketMinimumGross);
 	}
 }
