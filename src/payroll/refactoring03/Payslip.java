@@ -1,8 +1,5 @@
 package payroll.refactoring03;
 
-/**
- *  Payslip knows too much about tax calculations
- */
 public class Payslip {
     private final double grossSalary;
 

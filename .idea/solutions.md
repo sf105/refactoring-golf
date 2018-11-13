@@ -24,6 +24,8 @@ Refactoring 4
 - move assertNetForGross to bottom
 
 Refactoring 5
+
+Refactoring 6
 - Extract ParameterObject with bracketMinimumGross and taxRate
 - change signature to add taxBand parameter to getGrossToTaxInBand
 - reference bracketMinimumGross from taxBand

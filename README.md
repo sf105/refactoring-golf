@@ -23,6 +23,7 @@ Allow yourselves a maximum of 2 attempts at each round to determine your best sc
 
 ## Hints: 
 
+1. Each version has a `notes.md` file that describes the motivation for the next refactoring.
 1. You might want to keep the target code open in another window, or perhaps on the partner's machine. 
 It's easy to get confused about which file is which.
 1. Commit your code frequently, especially after each refactoring stage. That will make rolling-back easier 

@@ -1,9 +1,5 @@
 package payroll.refactoring02;
 
-/**
- * getNet() mixes up both the calculation of the tax and subtraction from the gross pay.
- * This should be split out
- */
 public class Payslip {
     private final double grossSalary;
 

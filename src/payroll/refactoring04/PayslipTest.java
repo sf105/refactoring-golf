@@ -4,10 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-/**
- * Lots of duplication in the tests
- */
-
 public class PayslipTest {
     @Test
     public void taxIsZeroIfGrossIsBelowTaxFreeLimit() {

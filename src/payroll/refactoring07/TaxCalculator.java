@@ -1,9 +1,5 @@
 package payroll.refactoring07;
 
-/**
- * This is better, but notice that it's still got repetition in the way the tax bands
- * are used. Can we make this more regular and simplify the structure?
- */
 public class TaxCalculator {
     public double taxFor(final double grossSalary) {
 		final TaxBand upperTaxBand = new TaxBand(40000.0, 0.4);

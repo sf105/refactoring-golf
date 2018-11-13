@@ -1,8 +1,5 @@
 package payroll.refactoring08;
 
-/**
- * The check for null is a bit clumsy. Is there a better way?
- */
 
 public class BandedTaxCalculator implements TaxCalculator {
 	private final double minimumGross;
