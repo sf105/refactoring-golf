@@ -12,12 +12,12 @@ public class BandedTaxCalculator implements TaxCalculator {
 	}
 	
 	@Override
-	public double getTax(double grossSalary) {
+	public double taxFor(double grossSalary) {
 		return getTaxForBand(grossSalary) + getTaxForLowerBands(grossSalary);
 	}
 
 	private double getTaxForLowerBands(double grossSalary) {
-		return lowerBandCalculator.getTax(getGrossToTaxAtLowerBand(grossSalary));
+		return lowerBandCalculator.taxFor(getGrossToTaxAtLowerBand(grossSalary));
 	}
 
 	private double getGrossToTaxAtLowerBand(double grossSalary) {

@@ -11,7 +11,7 @@ public class BandedTaxCalculatorTest {
 	
 	private BandedTaxCalculator calculator = new BandedTaxCalculator(MINIMUM_GROSS_FOR_BAND, RATE_FOR_BAND, new TaxCalculator() {
 		@Override
-		public double getTax(double grossSalary) {
+		public double taxFor(double grossSalary) {
 			return TAX_FROM_LOWER_BAND;
 		}
 	});
@@ -19,16 +19,16 @@ public class BandedTaxCalculatorTest {
 	@Test
 	public void lowerBandTaxIsZeroIfLowerBandCalculatorIsNull() {
 		BandedTaxCalculator calculator = new BandedTaxCalculator(MINIMUM_GROSS_FOR_BAND, RATE_FOR_BAND, null);
-		assertEquals(RATE_FOR_BAND * (2000 - MINIMUM_GROSS_FOR_BAND), calculator.getTax(2000), 0);
+		assertEquals(RATE_FOR_BAND * (2000 - MINIMUM_GROSS_FOR_BAND), calculator.taxFor(2000), 0);
 	}
 
 	@Test
 	public void allTaxIsFromLowerBandsIfGrossSalaryIsLessThanMinimumForBand() {
-		assertEquals(TAX_FROM_LOWER_BAND, calculator.getTax(MINIMUM_GROSS_FOR_BAND), 0);
+		assertEquals(TAX_FROM_LOWER_BAND, calculator.taxFor(MINIMUM_GROSS_FOR_BAND), 0);
 	}
 	
 	@Test
 	public void taxIsSumOfTaxFromLowerBandsAndTaxFromThisBand() {
-		assertEquals(TAX_FROM_LOWER_BAND + RATE_FOR_BAND * (2000 - MINIMUM_GROSS_FOR_BAND), calculator.getTax(2000), 0);
+		assertEquals(TAX_FROM_LOWER_BAND + RATE_FOR_BAND * (2000 - MINIMUM_GROSS_FOR_BAND), calculator.taxFor(2000), 0);
 	}
 }

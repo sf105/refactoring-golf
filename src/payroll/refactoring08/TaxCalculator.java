@@ -1,5 +1,5 @@
 package payroll.refactoring08;
 
 public interface TaxCalculator {
-	double getTax(final double grossSalary);
+	double taxFor(final double grossSalary);
 }

@@ -10,6 +10,6 @@ public class Payslip {
     }
 
     public double getNet() {
-        return grossSalary - taxCalculator.getTax(grossSalary);
+        return grossSalary - taxCalculator.taxFor(grossSalary);
     }
 }
