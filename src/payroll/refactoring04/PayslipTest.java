@@ -1,8 +1,8 @@
 package payroll.refactoring04;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Lots of duplication in the tests

@@ -16,3 +16,11 @@ Refactoring 3
 - rename calculatedTax to taxFor
 - change scope of taxFor to public
 - move TaxCalculator to top level
+
+Refactoring 4
+- extract method assertNetForGross
+- introduce parameter netSalary
+- fix tests manually
+- move assertNetForGross to bottom
+
+
