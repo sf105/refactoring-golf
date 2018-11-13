@@ -25,8 +25,13 @@ Refactoring 4
 
 Refactoring 5
 - Extract variable for tax bracket rates (x3)
-- extract variable for low tax bracket start
-
+- extract variable for tax bracket starts (x3)
+- extract remaining gross for middle and lower brackets (x2)
+- extract grossToTaxInBandsBelowCurrent() (IDE promts for a duplicate)
+- extract taxInBand() (IDE prompts for 2 duplicates)
+- rename parameter to grossSalaryExcludingPartAlreadyTaxedAtHigherRate
+- extract grossToTaxInBand
+- inline upperTaxBracketGross
 
 Refactoring 6
 - Extract ParameterObject with bracketMinimumGross and taxRate
