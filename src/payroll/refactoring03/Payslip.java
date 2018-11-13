@@ -11,10 +11,10 @@ public class Payslip {
     }
 
     public double getNet() {
-        return grossSalary - getTax();
+        return grossSalary - calculatedTax();
     }
 
-    private double getTax() {
+    private double calculatedTax() {
         final double taxFreeGross = Math.min(5000, grossSalary);
         final double lowerTaxBracketGross = Math.min(grossSalary - taxFreeGross, 15000);
         final double middleTaxBracketGross = Math.min(grossSalary - lowerTaxBracketGross - taxFreeGross, 20000);
