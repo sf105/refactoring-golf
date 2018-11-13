@@ -8,7 +8,7 @@ public class Payslip {
     }
 
     public double getNet() {
-        final double tfAmnt = Math.min(5000, sal);
+        final double tfAmnt = Math.min(sal, 5000);
         final double ltbAmnt = Math.min(sal - tfAmnt, 15000);
         final double mtbAmnt = Math.min(sal - ltbAmnt - tfAmnt, 20000);
         final double utbAmnt = Math.min(sal - mtbAmnt - ltbAmnt - tfAmnt, 20000);
