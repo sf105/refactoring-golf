@@ -1,5 +1,9 @@
 package payroll.refactoring08;
 
+/**
+ * The check for null is a bit clumsy. Is there a better way?
+ */
+
 public class BandedTaxCalculator implements TaxCalculator {
 	private final double minimumGross;
 	private final double taxRate;
@@ -17,7 +21,7 @@ public class BandedTaxCalculator implements TaxCalculator {
 	}
 
 	private double getTaxForLowerBands(double grossSalary) {
-		return lowerBandCalculator.taxFor(getGrossToTaxAtLowerBand(grossSalary));
+		return lowerBandCalculator == null ? 0 : lowerBandCalculator.taxFor(getGrossToTaxAtLowerBand(grossSalary));
 	}
 
 	private double getGrossToTaxAtLowerBand(double grossSalary) {

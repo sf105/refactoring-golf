@@ -1,13 +1,13 @@
 package payroll.refactoring06;
 
 /**
- * TaxCalculator is very hard-coded:
- * Data: Tax band limits and rates</para>
- * Structure: Banded structure with four levels
- * Both of these are subject to change
+ * TaxCalculator is very hard-coded
+ * There appears to be a common pattern around the start of each tax bracket and
+ * the rate for that bracket, both of which are likely to change.
+ * Introduce a structure to represent that concept.
  */
 public class TaxCalculator {
-    public double getTax(final double grossSalary) {
+    public double taxFor(final double grossSalary) {
         final double upperTaxBracketStart = 40000;
         final double upperTaxBracketRate = 0.4;
 		final double upperTaxBracketTax = getTaxInBand(grossSalary, upperTaxBracketStart, upperTaxBracketRate);

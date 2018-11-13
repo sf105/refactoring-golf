@@ -1,4 +1,4 @@
-package payroll.refactoring06;
+package payroll.refactoring09;
 
 public class Payslip {
     private final double grossSalary;

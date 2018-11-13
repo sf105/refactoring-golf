@@ -24,4 +24,17 @@ Refactoring 4
 - move assertNetForGross to bottom
 
 Refactoring 5
-- 
+- Extract ParameterObject with bracketMinimumGross and taxRate
+- change signature to add taxBand parameter to getGrossToTaxInBand
+- reference bracketMinimumGross from taxBand
+- remove unused parameter
+- move getGrossToTaxInBand to TaxBand
+- extract variables for TaxBands
+- add TaxBand parameter to getGrossToTaxInBandsBelowCurrent
+- use bracketMinimumGross from taxBand parameter
+- remove unused bracketMinimumGross
+- move getGrossToTaxInBandsBelowCurrent to TaxBand
+- remove unused getBracketMinimumGross
+- move getTaxInBand to TaxBand
+- inline getTaxRate
+- inline tax band constants

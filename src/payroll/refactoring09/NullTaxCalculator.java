@@ -1,4 +1,4 @@
-package payroll.refactoring08;
+package payroll.refactoring09;
 
 public class NullTaxCalculator implements TaxCalculator {
 	@Override
