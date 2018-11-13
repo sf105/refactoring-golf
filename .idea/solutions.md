@@ -49,4 +49,34 @@ Refactoring 6
 - inline getTaxRate
 - inline tax band constants
 
-Refactoring 
+Refactoring 07
+- Add middleTaxBand to upperTaxBandConstructor (1 x2)
+- Create constructor (Default null, use any var)
+- Assign to field
+- extract taxForLowerBands(lower, middle)
+- move taxForLowerBand to middleBand
+- use this.lowerTaxBand instead of parameter
+- remove unused parameter
+- rename remainingGrossForMiddleAndLowerBrackets to grossSalary
+- rename grossToTaxInBandsBelowCurrent to grossToTaxAtLowerBand
+- rename grossToTaxInBand to grossInBand
+- rename grossSalaryExcludingPartAlreadyTaxedAtHigherRate to grossSalary
+- rename taxInBand to taxForBand
+- rename grossSalaryExcludingPartAlreadyTaxedAtHigherRate to grossSalary
+- extract variable lowerMiddleTax
+- extract method taxFor (lowerMiddleTax)
+- move taxFor to TaxBand
+- rename remainingGrossForMiddleAndLowerBrackets to grossSalary
+- inline low and middle bracket tax (x2)
+- inline remainingGrossForLowerBracket
+- replace taxForBand with taxFor (failing test) 2x2
+- null check (2)
+- replace body of TaxCalculator.taxFor with upperTaxBand.taxFor()
+- extract TaxCalculator as interface (TaxCalculatorTemp)
+- make TaxBand.taxFor public 
+- move TaxBand up
+- rename TaxBand to BandedTaxCalculator
+- rename lowerTaxBand to lowerBandCalculator
+- implement TaxCalculator (2)
+- move calculators from TaxCalculatorTemp to test
+- delete TaxCalculatorTemp

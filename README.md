@@ -48,7 +48,7 @@ These are some example scores, achieved using IntelliJ:
 | 4    | 17         | lots of manual edits 
 | 5    | 13         |       
 | 6    | 14         |       
-| 7    | xx         |       
+| 7    | 38         | This one is quite hard, but is possible       
 | 8    | xx         |       
 
 ## Acknowledgements:
