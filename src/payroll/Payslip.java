@@ -26,15 +26,15 @@ public class Payslip {
 
         long tax = 0;
 
-        if (grossSalary > lowTaxThreshold) {
+        if (grossSalary > lowerTaxBand.threshold) {
             tax = lowerTaxBand.taxForBand(grossSalary);
         }
 
-        if (grossSalary > middleTaxThreshold) {
+        if (grossSalary > middleTaxBand.threshold) {
             tax = lowerTaxMaximum + middleTaxBand.taxForBand(grossSalary);
         }
 
-        if (grossSalary > upperTaxThreshold) {
+        if (grossSalary > upperTaxBand.threshold) {
             tax =  lowerTaxMaximum + middleTaxMaximum + upperTaxBand.taxForBand(grossSalary);
         }
         return tax;
