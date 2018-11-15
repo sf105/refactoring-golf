@@ -14,9 +14,9 @@ public class Payslip {
     private long taxFor(long grossSalary) {
         final int lowerTaxMaximum = 1500;
         final int middleTaxMaximum = 4000;
-        final TaxBand lowerTaxBand = new TaxBand(0.1, 5000);
-        final TaxBand middleTaxBand = new TaxBand(0.2, 20000);
-        final TaxBand upperTaxBand = new TaxBand(0.4, 40000);
+        final TaxBand lowerTaxBand = new TaxBand(0.1, 5000, null);
+        final TaxBand middleTaxBand = new TaxBand(0.2, 20000, lowerTaxBand);
+        final TaxBand upperTaxBand = new TaxBand(0.4, 40000, middleTaxBand);
 
         long tax = 0;
 
@@ -38,7 +38,7 @@ public class Payslip {
         private final double rate;
         private final int threshold;
 
-        private TaxBand(double rate, int threshold) {
+        private TaxBand(double rate, int threshold, TaxBand previousTaxBand) {
             this.rate = rate;
             this.threshold = threshold;
         }
