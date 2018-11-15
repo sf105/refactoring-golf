@@ -43,16 +43,8 @@ public class Payslip {
             this.threshold = threshold;
         }
 
-        public double getRate() {
-            return rate;
-        }
-
-        public int getThreshold() {
-            return threshold;
-        }
-
         private long taxForBand(long grossSalary) {
-            return Math.round((grossSalary - getThreshold()) * getRate());
+            return Math.round((grossSalary - threshold) * rate);
         }
 
         private boolean appliesTo(long grossSalary) {
