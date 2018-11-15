@@ -16,6 +16,12 @@ public class PayslipTest {
         assertEquals(netSalary, new Payslip(20000).netSalary());
     }
 
+    @Test public void
+    mid_rate_tax_for_salary_in_mid_rate_band() {
+        final long netSalary = 5000 + 13500 + 16000;
+        assertEquals(netSalary, new Payslip(40000).netSalary());
+    }
+
 
     public static class Payslip {
         private final long grossSalary;
@@ -27,9 +33,11 @@ public class PayslipTest {
         public long netSalary() {
             if (grossSalary <= 5000) return grossSalary;
 
-            long taxable = grossSalary - 5000;
+            if (grossSalary <= 20000) {
+                return grossSalary - Math.round((grossSalary - 5000) * 0.1);
+            }
 
-            return grossSalary - Math.round(taxable * 0.1);
+            return grossSalary - 1500 - Math.round((grossSalary - 20000) * 0.2);
         }
     }
 }
