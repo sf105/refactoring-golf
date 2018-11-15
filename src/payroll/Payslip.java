@@ -8,10 +8,10 @@ public class Payslip {
     }
 
     public long netSalary() {
-        return grossSalary - taxFor();
+        return grossSalary - taxFor(grossSalary);
     }
 
-    private long taxFor() {
+    private long taxFor(long grossSalary) {
         long tax = 0;
 
         if (grossSalary > 5000) {
