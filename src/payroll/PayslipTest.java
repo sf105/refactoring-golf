@@ -37,6 +37,11 @@ public class PayslipTest {
         }
 
         public long netSalary() {
+            long tax = taxFor();
+            return grossSalary - tax;
+        }
+
+        private long taxFor() {
             long tax = 0;
 
             if (grossSalary > 5000) {
@@ -50,7 +55,7 @@ public class PayslipTest {
             if (grossSalary > 40000) {
                tax =  1500 + 4000 + Math.round((grossSalary - 40000) * 0.4);
             }
-            return grossSalary - tax;
+            return tax;
         }
     }
 }
