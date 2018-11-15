@@ -20,19 +20,22 @@ public class Payslip {
         final int middleTaxMaximum = 4000;
         final double upperTaxRate = 0.4;
         final int upperTaxThreshold = 40000;
+        final TaxBand lowerTaxBand = new TaxBand(lowerTaxRate, lowTaxThreshold);
+        final TaxBand middleTaxBand = new TaxBand(middleTaxRate, middleTaxThreshold);
+        final TaxBand upperTaxBand = new TaxBand(upperTaxRate, upperTaxThreshold);
 
         long tax = 0;
 
         if (grossSalary > lowTaxThreshold) {
-            tax = new TaxBand(lowerTaxRate, lowTaxThreshold).taxForBand(grossSalary);
+            tax = lowerTaxBand.taxForBand(grossSalary);
         }
 
         if (grossSalary > middleTaxThreshold) {
-            tax = lowerTaxMaximum + new TaxBand(middleTaxRate, middleTaxThreshold).taxForBand(grossSalary);
+            tax = lowerTaxMaximum + middleTaxBand.taxForBand(grossSalary);
         }
 
         if (grossSalary > upperTaxThreshold) {
-            tax =  lowerTaxMaximum + middleTaxMaximum + new TaxBand(upperTaxRate, upperTaxThreshold).taxForBand(grossSalary);
+            tax =  lowerTaxMaximum + middleTaxMaximum + upperTaxBand.taxForBand(grossSalary);
         }
         return tax;
     }
