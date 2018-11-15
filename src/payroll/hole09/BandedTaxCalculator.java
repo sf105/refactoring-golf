@@ -1,5 +1,6 @@
 package payroll.hole09;
 
+
 public class BandedTaxCalculator implements TaxCalculator {
 	private final double minimumGross;
 	private final double taxRate;
@@ -13,11 +14,11 @@ public class BandedTaxCalculator implements TaxCalculator {
 	
 	@Override
 	public double taxFor(double grossSalary) {
-		return taxForBand(grossSalary) + getTaxForLowerBands(grossSalary);
+		return taxForBand(grossSalary) + taxForLowerBands(grossSalary);
 	}
 
-	private double getTaxForLowerBands(double grossSalary) {
-		return lowerBandCalculator.taxFor(grossToTaxAtLowerBand(grossSalary));
+	private double taxForLowerBands(double grossSalary) {
+		return lowerBandCalculator == null ? 0 : lowerBandCalculator.taxFor(grossToTaxAtLowerBand(grossSalary));
 	}
 
 	private double grossToTaxAtLowerBand(double grossSalary) {

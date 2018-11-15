@@ -50,11 +50,12 @@ Refactoring 6
 - inline tax band constants
 
 Refactoring 07
+- order lower/middle/upper tax bands
 - Add middleTaxBand to upperTaxBandConstructor (1 x2)
 - Create constructor (Default null, use any var)
 - Assign to field
 - extract taxForLowerBands(lower, middle)
-- move taxForLowerBand to middleBand
+- move taxForLowerBands to middleTaxBand
 - use this.lowerTaxBand instead of parameter
 - remove unused parameter
 - rename remainingGrossForMiddleAndLowerBrackets to grossSalary
@@ -69,9 +70,11 @@ Refactoring 07
 - rename remainingGrossForMiddleAndLowerBrackets to grossSalary
 - inline low and middle bracket tax (x2)
 - inline remainingGrossForLowerBracket
-- replace taxForBand with taxFor (failing test) 2x2
+- replace taxForBand with taxFor within taxForLowerBands (failing test) 2x2
 - null check (2)
 - replace body of TaxCalculator.taxFor with upperTaxBand.taxFor()
+
+Refactoring 08
 - extract TaxCalculator as interface (TaxCalculatorTemp)
 - make TaxBand.taxFor public 
 - move TaxBand up

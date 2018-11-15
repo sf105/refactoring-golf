@@ -32,8 +32,7 @@ public class PayslipTaxTest {
         final Payslip payslip = new Payslip(gross,
                 new BandedTaxCalculator(40000, 0.4,
                         new BandedTaxCalculator(20000, 0.2,
-                                new BandedTaxCalculator(5000, 0.1,
-                                        new NullTaxCalculator()))));
+                                new BandedTaxCalculator(5000, 0.1, null))));
         assertEquals(expectedNet, payslip.getNet(), 1e-6);
     }
 }
