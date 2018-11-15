@@ -24,16 +24,20 @@ public class Payslip {
         long tax = 0;
 
         if (grossSalary > lowTaxThreshold) {
-            tax = Math.round((grossSalary - lowTaxThreshold) * lowerTaxRate);
+            tax = taxForBand(grossSalary, lowerTaxRate, lowTaxThreshold);
         }
 
         if (grossSalary > middleTaxThreshold) {
-            tax = lowerTaxMaximum + Math.round((grossSalary - middleTaxThreshold) * middleTaxRate);
+            tax = lowerTaxMaximum + taxForBand(grossSalary, middleTaxRate, middleTaxThreshold);
         }
 
         if (grossSalary > upperTaxThreshold) {
-            tax =  lowerTaxMaximum + middleTaxMaximum + Math.round((grossSalary - upperTaxThreshold) * upperTaxRate);
+            tax =  lowerTaxMaximum + middleTaxMaximum + taxForBand(grossSalary, upperTaxRate, upperTaxThreshold);
         }
         return tax;
+    }
+
+    private long taxForBand(long grossSalary, double rate, int threshold) {
+        return Math.round((grossSalary - threshold) * rate);
     }
 }
