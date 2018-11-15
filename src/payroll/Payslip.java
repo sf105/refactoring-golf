@@ -17,8 +17,7 @@ public class Payslip {
             @Override public long taxFor(long grossSalary) { return 0; }
             @Override public long maximumTaxSoFar() { return 0; }
         };
-
-        final ChainedTaxBand lowerTaxBand = new ChainedTaxBand(0.1, 5000, 1500, nilTaxBand);
+        final TaxBand lowerTaxBand = new ChainedTaxBand(0.1, 5000, 1500, nilTaxBand);
         final TaxBand middleTaxBand = new ChainedTaxBand(0.2, 20000, 4000, lowerTaxBand);
         final TaxBand upperTaxBand = new ChainedTaxBand(0.4, 40000, 0, middleTaxBand);
 
@@ -26,7 +25,7 @@ public class Payslip {
         long tax = 0;
 
         if (lowerTaxBand.appliesTo(grossSalary)) {
-            tax = lowerTaxBand.taxForBand(grossSalary);
+            tax = lowerTaxBand.taxFor(grossSalary);
         }
 
         if (middleTaxBand.appliesTo(grossSalary)) {
