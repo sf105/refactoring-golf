@@ -37,10 +37,12 @@ public class Payslip {
     private static class TaxBand {
         private final double rate;
         private final int threshold;
+        private final TaxBand previousTaxBand;
 
         private TaxBand(double rate, int threshold, TaxBand previousTaxBand) {
             this.rate = rate;
             this.threshold = threshold;
+            this.previousTaxBand = previousTaxBand;
         }
 
         private long taxForBand(long grossSalary) {
