@@ -23,13 +23,17 @@ public class Payslip {
         }
 
         if (middleTaxBand.appliesTo(grossSalary)) {
-            tax = lowerTaxBand.maximumTax + middleTaxBand.taxForBand(grossSalary);
+            tax = taxFor(grossSalary, lowerTaxBand, middleTaxBand);
         }
 
         if (upperTaxBand.appliesTo(grossSalary)) {
             tax =  lowerTaxBand.maximumTax + middleTaxBand.maximumTax + upperTaxBand.taxForBand(grossSalary);
         }
         return tax;
+    }
+
+    private long taxFor(long grossSalary, TaxBand lowerTaxBand, TaxBand middleTaxBand) {
+        return lowerTaxBand.maximumTax + middleTaxBand.taxForBand(grossSalary);
     }
 
     private static class TaxBand {
