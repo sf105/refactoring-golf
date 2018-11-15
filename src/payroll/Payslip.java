@@ -20,15 +20,15 @@ public class Payslip {
 
         long tax = 0;
 
-        if (lowerTaxBand.aboveThreshold(grossSalary)) {
+        if (lowerTaxBand.appliesTo(grossSalary)) {
             tax = lowerTaxBand.taxForBand(grossSalary);
         }
 
-        if (middleTaxBand.aboveThreshold(grossSalary)) {
+        if (middleTaxBand.appliesTo(grossSalary)) {
             tax = lowerTaxMaximum + middleTaxBand.taxForBand(grossSalary);
         }
 
-        if (upperTaxBand.aboveThreshold(grossSalary)) {
+        if (upperTaxBand.appliesTo(grossSalary)) {
             tax =  lowerTaxMaximum + middleTaxMaximum + upperTaxBand.taxForBand(grossSalary);
         }
         return tax;
@@ -55,7 +55,7 @@ public class Payslip {
             return Math.round((grossSalary - getThreshold()) * getRate());
         }
 
-        private boolean aboveThreshold(long grossSalary) {
+        private boolean appliesTo(long grossSalary) {
             return grossSalary > threshold;
         }
     }
