@@ -50,7 +50,7 @@ public class Payslip {
             return Math.round((grossSalary - threshold) * rate);
         }
 
-        private boolean appliesTo(long grossSalary) {
+        public boolean appliesTo(long grossSalary) {
             return grossSalary > threshold;
         }
 
