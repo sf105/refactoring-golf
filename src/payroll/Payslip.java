@@ -12,8 +12,6 @@ public class Payslip {
     }
 
     private long taxFor(long grossSalary) {
-        final int lowerTaxMaximum = 1500;
-        final int middleTaxMaximum = 4000;
         final TaxBand lowerTaxBand = new TaxBand(0.1, 5000, 1500, null);
         final TaxBand middleTaxBand = new TaxBand(0.2, 20000, 4000, lowerTaxBand);
         final TaxBand upperTaxBand = new TaxBand(0.4, 40000, 0, middleTaxBand);
@@ -25,11 +23,11 @@ public class Payslip {
         }
 
         if (middleTaxBand.appliesTo(grossSalary)) {
-            tax = lowerTaxMaximum + middleTaxBand.taxForBand(grossSalary);
+            tax = lowerTaxBand.maximumTax + middleTaxBand.taxForBand(grossSalary);
         }
 
         if (upperTaxBand.appliesTo(grossSalary)) {
-            tax =  lowerTaxMaximum + middleTaxMaximum + upperTaxBand.taxForBand(grossSalary);
+            tax =  lowerTaxBand.maximumTax + middleTaxBand.maximumTax + upperTaxBand.taxForBand(grossSalary);
         }
         return tax;
     }
