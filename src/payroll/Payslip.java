@@ -24,21 +24,17 @@ public class Payslip {
         long tax = 0;
 
         if (grossSalary > lowTaxThreshold) {
-            tax = taxForBand(grossSalary, new TaxBand(lowerTaxRate, lowTaxThreshold));
+            tax = new TaxBand(lowerTaxRate, lowTaxThreshold).taxForBand(grossSalary);
         }
 
         if (grossSalary > middleTaxThreshold) {
-            tax = lowerTaxMaximum + taxForBand(grossSalary, new TaxBand(middleTaxRate, middleTaxThreshold));
+            tax = lowerTaxMaximum + new TaxBand(middleTaxRate, middleTaxThreshold).taxForBand(grossSalary);
         }
 
         if (grossSalary > upperTaxThreshold) {
-            tax =  lowerTaxMaximum + middleTaxMaximum + taxForBand(grossSalary, new TaxBand(upperTaxRate, upperTaxThreshold));
+            tax =  lowerTaxMaximum + middleTaxMaximum + new TaxBand(upperTaxRate, upperTaxThreshold).taxForBand(grossSalary);
         }
         return tax;
-    }
-
-    private long taxForBand(long grossSalary, TaxBand taxBand) {
-        return Math.round((grossSalary - taxBand.getThreshold()) * taxBand.getRate());
     }
 
     private static class TaxBand {
@@ -56,6 +52,10 @@ public class Payslip {
 
         public int getThreshold() {
             return threshold;
+        }
+
+        private long taxForBand(long grossSalary) {
+            return Math.round((grossSalary - getThreshold()) * getRate());
         }
     }
 }
