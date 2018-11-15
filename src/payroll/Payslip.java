@@ -23,7 +23,7 @@ public class Payslip {
         }
 
         if (middleTaxBand.appliesTo(grossSalary)) {
-            tax = middleTaxBand.taxFor(grossSalary, lowerTaxBand);
+            tax = middleTaxBand.taxFor(grossSalary);
         }
 
         if (upperTaxBand.appliesTo(grossSalary)) {
@@ -53,8 +53,8 @@ public class Payslip {
             return grossSalary > threshold;
         }
 
-        private long taxFor(long grossSalary, TaxBand lowerTaxBand) {
-            return lowerTaxBand.maximumTax + taxForBand(grossSalary);
+        private long taxFor(long grossSalary) {
+            return previousTaxBand.maximumTax + taxForBand(grossSalary);
         }
     }
 }
