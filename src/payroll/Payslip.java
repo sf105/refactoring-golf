@@ -12,9 +12,9 @@ public class Payslip {
     }
 
     private long taxFor(long grossSalary) {
-        final TaxBand lowerTaxBand = new TaxBand(0.1, 5000, 1500, null);
-        final TaxBand middleTaxBand = new TaxBand(0.2, 20000, 4000, lowerTaxBand);
-        final TaxBand upperTaxBand = new TaxBand(0.4, 40000, 0, middleTaxBand);
+        final ChainedTaxBand lowerTaxBand = new ChainedTaxBand(0.1, 5000, 1500, null);
+        final TaxBand middleTaxBand = new ChainedTaxBand(0.2, 20000, 4000, lowerTaxBand);
+        final TaxBand upperTaxBand = new ChainedTaxBand(0.4, 40000, 0, middleTaxBand);
 
 
         long tax = 0;
@@ -33,13 +33,13 @@ public class Payslip {
         return tax;
     }
 
-    public static class TaxBand {
+    public static class ChainedTaxBand implements TaxBand {
         private final double rate;
         private final int threshold;
         private final long maximumTax;
         private final TaxBand previousTaxBand;
 
-        private TaxBand(double rate, int threshold, long maximumTax, TaxBand previousTaxBand) {
+        private ChainedTaxBand(double rate, int threshold, long maximumTax, TaxBand previousTaxBand) {
             this.rate = rate;
             this.threshold = threshold;
             this.maximumTax = maximumTax;
@@ -50,14 +50,17 @@ public class Payslip {
             return Math.round((grossSalary - threshold) * rate);
         }
 
+        @Override
         public boolean appliesTo(long grossSalary) {
             return grossSalary > threshold;
         }
 
+        @Override
         public long taxFor(long grossSalary) {
             return previousTaxBand.maximumTaxSoFar() + taxForBand(grossSalary);
         }
 
+        @Override
         public long maximumTaxSoFar() {
             return maximumTax + (previousTaxBand == null ? 0 : previousTaxBand.maximumTaxSoFar());
         }
