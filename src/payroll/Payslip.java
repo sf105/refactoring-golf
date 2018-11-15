@@ -67,7 +67,7 @@ public class Payslip {
 
         @Override
         public long maximumTaxSoFar() {
-            return maximumTax + (previousTaxBand == null ? 0 : previousTaxBand.maximumTaxSoFar());
+            return maximumTax + previousTaxBand.maximumTaxSoFar();
         }
     }
 }
