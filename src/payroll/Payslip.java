@@ -12,18 +12,27 @@ public class Payslip {
     }
 
     private long taxFor(long grossSalary) {
+        final double lowerTaxRate = 0.1;
+        final int lowTaxThreshold = 5000;
+        final int lowerTaxMaximum = 1500;
+        final double middleTaxRate = 0.2;
+        final int middleTaxThreshold = 20000;
+        final int middleTaxMaximum = 4000;
+        final double upperTaxRate = 0.4;
+        final int upperTaxThreshold = 40000;
+
         long tax = 0;
 
-        if (grossSalary > 5000) {
-            tax = Math.round((grossSalary - 5000) * 0.1);
+        if (grossSalary > lowTaxThreshold) {
+            tax = Math.round((grossSalary - lowTaxThreshold) * lowerTaxRate);
         }
 
-        if (grossSalary > 20000) {
-            tax = 1500 + Math.round((grossSalary - 20000) * 0.2);
+        if (grossSalary > middleTaxThreshold) {
+            tax = lowerTaxMaximum + Math.round((grossSalary - middleTaxThreshold) * middleTaxRate);
         }
 
-        if (grossSalary > 40000) {
-           tax =  1500 + 4000 + Math.round((grossSalary - 40000) * 0.4);
+        if (grossSalary > upperTaxThreshold) {
+            tax =  lowerTaxMaximum + middleTaxMaximum + Math.round((grossSalary - upperTaxThreshold) * upperTaxRate);
         }
         return tax;
     }
