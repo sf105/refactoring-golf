@@ -22,6 +22,12 @@ public class PayslipTest {
         assertEquals(netSalary, new Payslip(40000).netSalary());
     }
 
+    @Test public void
+    upper_rate_tax_for_salary_in_upper_rate_band() {
+        final long netSalary = 5000 + 13500 + 16000 + 600;
+        assertEquals(netSalary, new Payslip(41000).netSalary());
+    }
+
 
     public static class Payslip {
         private final long grossSalary;
@@ -37,7 +43,12 @@ public class PayslipTest {
                 return grossSalary - Math.round((grossSalary - 5000) * 0.1);
             }
 
-            return grossSalary - 1500 - Math.round((grossSalary - 20000) * 0.2);
+            if (grossSalary <= 40000) {
+                return grossSalary - 1500 - Math.round((grossSalary - 20000) * 0.2);
+            }
+
+            return grossSalary - 1500 - 4000 - Math.round((grossSalary - 40000) * 0.4);
+
         }
     }
 }
