@@ -8,13 +8,10 @@ public class Payslip {
     }
 
     public long netSalary() {
-        return grossSalary - new TaxCalculator().invoke();
+        return grossSalary - new TaxCalculator().taxFor(grossSalary);
     }
 
     private class TaxCalculator {
-        public long invoke() {
-            return taxFor(grossSalary);
-        }
 
         private long taxFor(long grossSalary) {
             final TaxBand lowerTaxBand = new TaxBand.ChainedTaxBand(0.1, 5000, 1500, TaxBand.NIL_TAX_BAND);
