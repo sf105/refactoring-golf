@@ -13,7 +13,7 @@ public class Payslip {
         return grossSalary - taxCalculator.taxFor(grossSalary);
     }
 
-    private class TaxCalculator {
+    private static class TaxCalculator {
 
         private long taxFor(long grossSalary) {
             final TaxBand lowerTaxBand = new TaxBand.ChainedTaxBand(0.1, 5000, 1500, TaxBand.NIL_TAX_BAND);
