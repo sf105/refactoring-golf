@@ -37,8 +37,7 @@ public class PayslipTest {
         }
 
         public long netSalary() {
-            long tax = taxFor();
-            return grossSalary - tax;
+            return grossSalary - taxFor();
         }
 
         private long taxFor() {
