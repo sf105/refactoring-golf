@@ -48,8 +48,10 @@ These are some example scores, achieved using IntelliJ:
 | 4    | 17         | lots of manual edits 
 | 5    | 13         |       
 | 6    | 14         |       
-| 7    | 38         | This one is quite hard, but is possible       
-| 8    | xx         |       
+| 7    | 29         | This one is quite hard, but is possible       
+| 8    | 8          |       
+| 9    | xx         |       
+       
 
 ## Acknowledgements:
 This exercise was mainly taken from an example by Lance Walton.

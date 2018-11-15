@@ -77,8 +77,7 @@ Refactoring 07
 Refactoring 08
 - extract TaxCalculator as interface (TaxCalculatorTemp)
 - make TaxBand.taxFor public 
-- move TaxBand up
-- rename TaxBand to BandedTaxCalculator
+- move TaxBand up to top level and rename to BandedTaxCalculator
 - rename lowerTaxBand to lowerBandCalculator
 - implement TaxCalculator (2)
 - move calculators from TaxCalculatorTemp to test
