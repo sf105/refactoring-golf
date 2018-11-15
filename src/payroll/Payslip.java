@@ -20,20 +20,14 @@ public class Payslip {
         private final TaxBand upperTaxBand = new TaxBand.ChainedTaxBand(0.4, 40000, 0, middleTaxBand);
 
         private long taxFor(long grossSalary) {
-            long tax = 0;
+            return taxBandFor(grossSalary).taxFor(grossSalary);
+        }
 
-            if (lowerTaxBand.appliesTo(grossSalary)) {
-                tax = lowerTaxBand.taxFor(grossSalary);
-            }
-
-            if (middleTaxBand.appliesTo(grossSalary)) {
-                tax = middleTaxBand.taxFor(grossSalary);
-            }
-
-            if (upperTaxBand.appliesTo(grossSalary)) {
-                tax =  upperTaxBand.taxFor(grossSalary);
-            }
-            return tax;
+        private TaxBand taxBandFor(long grossSalary) {
+            if (upperTaxBand.appliesTo(grossSalary)) return upperTaxBand;
+            if (middleTaxBand.appliesTo(grossSalary)) return middleTaxBand;
+            if (lowerTaxBand.appliesTo(grossSalary)) return  lowerTaxBand;
+            return TaxBand.NIL_TAX_BAND;
         }
     }
 }
