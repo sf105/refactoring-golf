@@ -27,7 +27,7 @@ public class Payslip {
         }
 
         if (upperTaxBand.appliesTo(grossSalary)) {
-            tax =  lowerTaxBand.maximumTax + upperTaxBand.taxFor(grossSalary);
+            tax =  upperTaxBand.taxFor(grossSalary);
         }
         return tax;
     }
@@ -58,7 +58,7 @@ public class Payslip {
         }
 
         private long maximumTaxSoFar() {
-            return maximumTax;
+            return maximumTax + (previousTaxBand == null ? 0 : previousTaxBand.maximumTaxSoFar());
         }
     }
 }
