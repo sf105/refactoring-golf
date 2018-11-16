@@ -2,7 +2,7 @@
 `https://github.com/sf105/refactoring-golf`
 
 _Refactoring Golf_ is a game designed to stretch your refactoring muscles and 
-tp get you to explore your IDE to see what's really possible using 
+to get you to explore your IDE to see what's really possible using 
 shortcuts and automation.
 
 This repository contains multiple versions of a simple class to calculate tax on a payslip.
