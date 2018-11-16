@@ -3,7 +3,8 @@
 
 _Refactoring Golf_ is a game designed to stretch your refactoring muscles and 
 to get you to explore your IDE to see what's really possible using 
-shortcuts and automation.
+shortcuts and automation. The idea is to focus on one aspect of coding 
+and see how far it can be pushed.
 
 This repository contains multiple versions of a simple class to calculate tax on a payslip.
 * The first £5,000 is tax free
