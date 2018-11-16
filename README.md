@@ -36,6 +36,8 @@ It's easy to get confused about which file is which.
 if you want to make another attempt or if you get confused.
 - Run the tests after each "stroke". You can do this by selecting the top-level *refactoring-golf* in 
 the project view and selecting `Run 'All Tests'` from the pop-up menu. 
+- Check your code in frequently so it's easier to try a refactoring more than once. Idea also has 
+an excellent _Local History_ option. 
 
 ## Practical
 - This exercise was written with _Intellj Idea_. You should be able to clone the repository 
