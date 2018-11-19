@@ -7,10 +7,11 @@ shortcuts and automation. The idea is to focus on one aspect of coding
 and see how far it can be pushed.
 
 This repository contains multiple versions of a simple class to calculate tax on a payslip.
-* The first £5,000 is tax free
-* Up to £20,000 is taxed at 10%
-* Up to £40,000 is taxed at 20%
-* Above £40,000 is taxed at 40%
+
+* The first 5,000 is tax free
+* Up to 20,000 is taxed at 10%
+* Up to 40,000 is taxed at 20%
+* Above 40,000 is taxed at 40%
 
 Each version is a refactoring of the previous version. Sticking with the golf metaphor, 
 each version is called a "hole". 
@@ -50,18 +51,18 @@ and keeping it handy
 ## Example scores
 These are some example scores, achieved using IntelliJ.  
 
-| Hole | Best score | Notes 
-|------|------------|-------
-| 1    | 6          |       
-| 2    | 3          |       
-| 3    | 9          |       
-| 4    | 17         | lots of manual edits 
-| 5    | 13         |       
-| 6    | 14         |       
-| 7    | 29         | This one is quite hard, but is possible       
-| 8    | 8          |       
-| 9    | xx         |       
-       
+<table border="1">
+<tr><th>Hole</th><th>Best score</th><th>Notes</th></tr>
+<tr><td> 1    </td><td> 6          </td><td></td></tr>
+<tr><td> 2    </td><td> 3          </td><td></td></tr>
+<tr><td> 3    </td><td> 9          </td><td></td></tr>
+<tr><td> 4    </td><td> 17         </td><td>lots of manual edits</td></tr> 
+<tr><td> 5    </td><td> 13         </td><td></td></tr>
+<tr><td> 6    </td><td> 14         </td><td></td></tr>
+<tr><td> 7    </td><td> 29         </td><td>This one is quite hard, but is possible</td></tr>       
+<tr><td> 8    </td><td> 8          </td><td></td></tr>
+<tr><td> 9    </td><td> xx         </td><td></td></tr>
+</table>       
 ## Alternative version
 There's an alternative version that was implemented using TDD from scratch in the 
 `reimplemented-with-tdd` branch of the repository.
