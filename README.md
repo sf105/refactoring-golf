@@ -63,6 +63,7 @@ These are some example scores, achieved using IntelliJ.
 <tr><td> 8    </td><td> 8          </td><td></td></tr>
 <tr><td> 9    </td><td> xx         </td><td></td></tr>
 </table>       
+
 ## Alternative version
 There's an alternative version that was implemented using TDD from scratch in the 
 `reimplemented-with-tdd` branch of the repository.
