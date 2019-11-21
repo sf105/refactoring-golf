@@ -6,7 +6,7 @@ to get you to explore your IDE to see what's really possible using
 shortcuts and automation. The idea is to focus on one aspect of coding 
 and see how far it can be pushed.
 
-This repository contains multiple versions of a simple class to calculate tax on a payslip.
+This repository contains multiple versions of a simple class to calculate tax on a bustaPaga.
 
 * The first 5,000 is tax free
 * Up to 20,000 is taxed at 10%
