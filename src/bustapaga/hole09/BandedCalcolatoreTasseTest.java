@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class BandedTaxCalculatorTest {
+public class BandedCalcolatoreTasseTest {
 	private static final double RATE_FOR_BAND = 0.1;
 	private static final int MINIMUM_GROSS_FOR_BAND = 1000;
 	private static final int TAX_FROM_LOWER_BAND = 1;
