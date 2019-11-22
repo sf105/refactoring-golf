@@ -1,7 +1,7 @@
 package bustapaga.buca07;
 
 public class CalcolatoreTasse {
-    public double per(final double imponibile) {
+    public double tasse(final double imponibile) {
 		final Scaglione terzoScaglione = new Scaglione(40000.0, 0.4);
 		final double tasseTerzoScaglione = terzoScaglione.tasseDelloScaglione(imponibile);
         final double imponibileResiduoPerGliScaglioniInferiori = terzoScaglione.imponibileResiduoDaTassare(imponibile);

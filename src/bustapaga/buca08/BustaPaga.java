@@ -1,4 +1,4 @@
-package bustapaga.buca07;
+package bustapaga.buca08;
 
 public class BustaPaga {
     private final double imponibile;
