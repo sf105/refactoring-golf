@@ -1,23 +1,23 @@
-package bustapaga.hole10;
+package bustapaga.buca10;
 
-public class BandedTaxCalculator implements TaxCalculator {
+public class CalcolatoreScaglioneTasse implements CalcolatoreTasse {
 	private final double minimumGross;
 	private final double taxRate;
-	private final TaxCalculator lowerBandCalculator;
+	private final CalcolatoreTasse lowerBandCalculator;
 
-	public BandedTaxCalculator(double minimumGross, double taxRate, TaxCalculator lowerBandCalculator) {
+	public CalcolatoreScaglioneTasse(double minimumGross, double taxRate, CalcolatoreTasse lowerBandCalculator) {
 		this.minimumGross = minimumGross;
 		this.taxRate = taxRate;
 		this.lowerBandCalculator = lowerBandCalculator;
 	}
 	
 	@Override
-	public double taxFor(double grossSalary) {
+	public double tasse(double grossSalary) {
 		return taxForBand(grossSalary) + getTaxForLowerBands(grossSalary);
 	}
 
 	private double getTaxForLowerBands(double grossSalary) {
-		return lowerBandCalculator.taxFor(grossToTaxAtLowerBand(grossSalary));
+		return lowerBandCalculator.tasse(grossToTaxAtLowerBand(grossSalary));
 	}
 
 	private double grossToTaxAtLowerBand(double grossSalary) {

@@ -1,4 +1,4 @@
-package bustapaga.hole10;
+package bustapaga.buca10;
 
 import org.junit.Test;
 
@@ -29,11 +29,11 @@ public class BustaPagaTaxTest {
     }
 
     private void assertNetForGross(final int gross, final int expectedNet) {
-        final Payslip payslip = new Payslip(gross,
-                new BandedTaxCalculator(40000, 0.4,
-                        new BandedTaxCalculator(20000, 0.2,
-                                new BandedTaxCalculator(5000, 0.1,
-                                        new NullTaxCalculator()))));
-        assertEquals(expectedNet, payslip.getNet(), 1e-6);
+        final BustaPaga bustaPaga = new BustaPaga(gross,
+                new CalcolatoreScaglioneTasse(40000, 0.4,
+                        new CalcolatoreScaglioneTasse(20000, 0.2,
+                                new CalcolatoreScaglioneTasse(5000, 0.1,
+                                        new CalcolatoreTasseNullo()))));
+        assertEquals(expectedNet, bustaPaga.getNetto(), 1e-6);
     }
 }

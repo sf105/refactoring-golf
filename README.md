@@ -6,7 +6,7 @@ to get you to explore your IDE to see what's really possible using
 shortcuts and automation. The idea is to focus on one aspect of coding 
 and see how far it can be pushed.
 
-This repository contains multiple versions of a simple class to calculate tax on a bustaPaga.
+This repository contains multiple versions of a simple class to calculate tax on a payslip.
 
 * The first 5,000 is tax free
 * Up to 20,000 is taxed at 10%
@@ -64,9 +64,11 @@ These are some example scores, achieved using IntelliJ.
 <tr><td> 9    </td><td> xx         </td><td></td></tr>
 </table>       
 
-## Alternative version
+## Alternative versions
 There's an alternative version that was implemented using TDD from scratch in the 
 `reimplemented-with-tdd` branch of the repository.
+
+There's also an Italian version in the `italian` branch. 
 
 ## Acknowledgements
 This exercise was mainly taken from an example by Lance Walton.
