@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class BustaPagaTest {
+public class BustaPagaTest05 {
     @Test
     public void tasseZeroSeImponibileInferioreAlPrimoScaglione() {
         assertNettoDatoIlLordo(5000, 5000);

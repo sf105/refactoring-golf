@@ -1,10 +1,10 @@
-package bustapaga.buca06;
+package bustapaga.buca08;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class BustaPagaTest {
+public class BustaPagaTest08 {
     @Test
     public void tasseZeroSeImponibileInferioreAlPrimoScaglione() {
         assertNettoDatoIlLordo(5000, 5000);

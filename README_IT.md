@@ -43,12 +43,20 @@ nella vista progetto e selezionare `Run 'All Tests'` dal menu pop-up.
 - Controllate spesso il vostro codice in modo che sia facile tentare un refactoring più di una volta. Idea ha anche
 un'ottima  so it's easier to try a refactoring more than once. Idea ha anche una opzione (_Local History_) che può risultare utile.
 
-## Pratica
+## Pratica (IDE)
 - L'esercizio è stato scritto con _Intellj Idea_. Dovreste riuscire facilmente a clonare il repo e aprirlo
  (_Open_) come progetto.
 - Idea ha una _Keymap Reference_ disponibile dal menu di aiuto. Se non lo conoscete, vale la
 pena leggerlo e tenerlo a portata di mano.
 - Per iniziare va benissimo usare il mouse, ma cercate di imparare le scorciatoie di tastiera.
+- Non dovrebbero esserci problemi di sorta usando altri IDE (Eclipse, VS, VSC, Netbeans), ma l'importazione va fatta 
+manualmente e potrebbero essere necessari aggiustamenti
+
+#Pratica (Repl)
+- L'esercizio è stato adattato per essere usato online tramite Repl.it. Importate questo repo in Repl.it e tutto 
+dovrebbe funzionare. 
+- Lanciando il main si lanciano i test della buca 1. Per cambiare buca basta modificare il parametro 
+passato a TestRunnen, nel medoto Main.
 
 ## Esempio di punteggi
 Ecco qualche esempio di punteggio, ottenuto tramite IntelliJ.  
@@ -66,11 +74,11 @@ Ecco qualche esempio di punteggio, ottenuto tramite IntelliJ.
 <tr><td> 9    </td><td> xx         </td><td></td></tr>
 </table>       
 
-## Versione alternativa
+## Versioni alternative
+La versione in inglese è presente nel branch `main`.
+
 Troverete anche una versione alternativa implementata da zero con TFF nel branch  
 `reimplemented-with-tdd` del repo
-
-La versione in inglese è presente nel branch `main`.
 
 ## Crediti
 Gran parte di questo esercizio è stato preso da Lance Walton.
