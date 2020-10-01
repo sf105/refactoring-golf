@@ -64,9 +64,11 @@ These are some example scores, achieved using IntelliJ.
 <tr><td> 9    </td><td> xx         </td><td></td></tr>
 </table>       
 
-## Alternative version
+## Alternative versions
 There's an alternative version that was implemented using TDD from scratch in the 
 `reimplemented-with-tdd` branch of the repository.
+
+There's also an Italian version in the `italian` branch. 
 
 ## Acknowledgements
 This exercise was mainly taken from an example by Lance Walton.
