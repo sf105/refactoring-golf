@@ -44,6 +44,7 @@ an excellent _Local History_ option.
 ## Practical
 - This exercise was written with _Intellj Idea_. You should be able to clone the repository 
 and _Open_ it as a project. 
+- You might have to set the JDK for the project. The project will build with versions from Java 11.
 - Idea has a _Keymap Reference_ available from the help menu. If you're unfamiliar, it's worth reading this through 
 and keeping it handy
 - Mouse actions are fine to start with, but learn the key shortcuts
