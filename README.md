@@ -40,6 +40,7 @@ if you want to make another attempt or if you get confused.
 the project view and selecting `Run 'All Tests'` from the pop-up menu. 
 - Check your code in frequently so it's easier to try a refactoring more than once. Idea also has 
 an excellent _Local History_ option. 
+- Also look at the options available from `Show Context Action` if you right-click on a feature. The (very useful) keyboard shortcut varies by platform. 
 
 ## Practical
 - This exercise was written with _Intellj Idea_. You should be able to clone the repository 
@@ -52,7 +53,7 @@ and keeping it handy
 ## Example scores
 These are some example scores, achieved using IntelliJ.  
 
-<table border="1">
+<table>
 <tr><th>Hole</th><th>Best score</th><th>Notes</th></tr>
 <tr><td> 1    </td><td> 6          </td><td></td></tr>
 <tr><td> 2    </td><td> 3          </td><td></td></tr>
@@ -79,6 +80,5 @@ These instructions were mostly stolen from @jasongorman's
 
 ## Notes
 
-- we used `double` for the calculations. Using floating point types is usually a bad idea for money, 
-but here it's to simplify the exercises. The alternative TDD version uses `long`. Both should probably 
+- we used `long` for the calculations, like the alternative TDD version. Both should probably 
 use a decimal format.

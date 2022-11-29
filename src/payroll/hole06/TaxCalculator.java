@@ -1,33 +1,33 @@
 package payroll.hole06;
 
 public class TaxCalculator {
-    public double taxFor(final double grossSalary) {
-        final double upperTaxBracketStart = 40000;
+    public long taxFor(final long grossSalary) {
+        final long upperTaxBracketStart = 40000;
         final double upperTaxBracketRate = 0.4;
-		final double upperTaxBracketTax = taxInBand(grossSalary, upperTaxBracketStart, upperTaxBracketRate);
-        final double remainingGrossForMiddleAndLowerBrackets = grossToTaxInBandsBelowCurrent(grossSalary, upperTaxBracketStart);
+		final long upperTaxBracketTax = taxInBand(grossSalary, upperTaxBracketStart, upperTaxBracketRate);
+        final long remainingGrossForMiddleAndLowerBrackets = grossToTaxInBandsBelowCurrent(grossSalary, upperTaxBracketStart);
         
-        final double middleTaxBracketStart = 20000;
+        final long middleTaxBracketStart = 20000;
         final double middleTaxBracketRate = 0.2;
-		final double middleTaxBracketTax = taxInBand(remainingGrossForMiddleAndLowerBrackets, middleTaxBracketStart, middleTaxBracketRate);
-        final double remainingGrossForLowerBracket = grossToTaxInBandsBelowCurrent(remainingGrossForMiddleAndLowerBrackets, middleTaxBracketStart);
+		final long middleTaxBracketTax = taxInBand(remainingGrossForMiddleAndLowerBrackets, middleTaxBracketStart, middleTaxBracketRate);
+        final long remainingGrossForLowerBracket = grossToTaxInBandsBelowCurrent(remainingGrossForMiddleAndLowerBrackets, middleTaxBracketStart);
         
-        final double lowerTaxBracketStart = 5000;
+        final long lowerTaxBracketStart = 5000;
         final double lowerTaxBracketRate = 0.1;
-		final double lowerTaxBracketTax = taxInBand(remainingGrossForLowerBracket, lowerTaxBracketStart, lowerTaxBracketRate);
+		final long lowerTaxBracketTax = taxInBand(remainingGrossForLowerBracket, lowerTaxBracketStart, lowerTaxBracketRate);
         
 		return lowerTaxBracketTax + middleTaxBracketTax + upperTaxBracketTax;
     }
 
-	private double taxInBand(final double grossSalaryExcludingPartAlreadyTaxedAtHigherRate, final double bracketMinimumGross, final double taxRate) {
-		return grossToTaxInBand(grossSalaryExcludingPartAlreadyTaxedAtHigherRate, bracketMinimumGross) * taxRate;
+	private long taxInBand(final long grossSalaryExcludingPartAlreadyTaxedAtHigherRate, final long bracketMinimumGross, final double taxRate) {
+		return Math.round(grossToTaxInBand(grossSalaryExcludingPartAlreadyTaxedAtHigherRate, bracketMinimumGross) * taxRate);
 	}
 
-	private double grossToTaxInBandsBelowCurrent(final double grossSalary, final double bracketMinimumGross) {
+	private long grossToTaxInBandsBelowCurrent(final long grossSalary, final long bracketMinimumGross) {
 		return Math.min(grossSalary, bracketMinimumGross);
 	}
 
-	private double grossToTaxInBand(double grossSalaryExcludingPartAlreadyTaxedAtHigherRate, final double bracketMinimumGross) {
+	private long grossToTaxInBand(long grossSalaryExcludingPartAlreadyTaxedAtHigherRate, final long bracketMinimumGross) {
 		return Math.max(0, grossSalaryExcludingPartAlreadyTaxedAtHigherRate - bracketMinimumGross);
 	}
 }

@@ -30,6 +30,6 @@ public class PayslipTest {
 
     private void assertNetGivenGross(final int gross, final int expectedNet) {
         final Payslip payslip = new Payslip(gross, new TaxCalculator());
-        assertEquals(expectedNet, payslip.getNet(), 1e-6);
+        assertEquals(expectedNet, payslip.getNet());
     }
 }

@@ -9,12 +9,8 @@ public class BandedTaxCalculatorTest {
 	private static final int MINIMUM_GROSS_FOR_BAND = 1000;
 	private static final int TAX_FROM_LOWER_BAND = 1;
 	
-	private BandedTaxCalculator calculator = new BandedTaxCalculator(MINIMUM_GROSS_FOR_BAND, RATE_FOR_BAND, new TaxCalculator() {
-		@Override
-		public double taxFor(double grossSalary) {
-			return TAX_FROM_LOWER_BAND;
-		}
-	});
+	private final BandedTaxCalculator calculator =
+			new BandedTaxCalculator(MINIMUM_GROSS_FOR_BAND, RATE_FOR_BAND, grossSalary -> TAX_FROM_LOWER_BAND);
 	
 	@Test
 	public void lowerBandTaxIsZeroIfLowerBandCalculatorIsNull() {

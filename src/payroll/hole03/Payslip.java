@@ -1,20 +1,20 @@
 package payroll.hole03;
 
 public class Payslip {
-    private final double grossSalary;
+    private final long grossSalary;
 
-    public Payslip(final double grossSalary) {
+    public Payslip(final long grossSalary) {
         this.grossSalary = grossSalary;
     }
 
-    public double getNet() {
+    public long getNet() {
         return grossSalary - calculatedTax();
     }
 
-    private double calculatedTax() {
-        final double lowerTaxBracketGross = Math.max(Math.min(grossSalary, 20000.0) - 5000, 0.0);
-        final double middleTaxBracketGross = Math.max(Math.min(grossSalary, 40000) - 20000, 0.0);
-        final double upperTaxBracketGross = Math.max(grossSalary - 40000, 0.0);
-        return lowerTaxBracketGross * 0.1 + middleTaxBracketGross * 0.2 + upperTaxBracketGross * 0.4;
+    private long calculatedTax() {
+        final long lowerTaxBracketGross = Math.max(Math.min(grossSalary, 20000) - 5000, 0);
+        final long middleTaxBracketGross = Math.max(Math.min(grossSalary, 40000) - 20000, 0);
+        final long upperTaxBracketGross = Math.max(grossSalary - 40000, 0);
+        return Math.round(lowerTaxBracketGross * 0.1 + middleTaxBracketGross * 0.2 + upperTaxBracketGross * 0.4);
     }
 }
